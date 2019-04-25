@@ -144,6 +144,8 @@ namespace GGTech.QuanLyCoSoGietMo.Forms
                             dr["SoTien"] = _SoTien;
                             dr["GhiChu"] = _GhiChu;
                             dr["NgayChi"] = NgayNhapDuLieu;
+                            dr["NgayTao"] = DateTime.Now;
+                            dr["NgayCapNhat"] = DateTime.Now;
                             tableThuChi.Rows.Add(dr);
                         }
                         catch (Exception ex)

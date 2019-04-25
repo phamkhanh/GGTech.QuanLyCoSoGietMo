@@ -1,6 +1,7 @@
 ﻿using GGTech.QuanLyCoSoGietMo._1.Common;
 using GGTech.QuanLyCoSoGietMo.Forms;
 using GGTech.QuanLyCoSoGietMo.Forms.DanhMuc;
+using GGTech.QuanLyCoSoGietMo.Forms.QuanLyThuChi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,11 @@ namespace GGTech.QuanLyCoSoGietMo
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AppCommon.AddFormToMdiParent(new KhachHangForm(), this);
+        }
+
+        private void thốngKêToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AppCommon.AddFormToMdiParent(new ThongKeThuChiForm(), this);
         }
     }
 }

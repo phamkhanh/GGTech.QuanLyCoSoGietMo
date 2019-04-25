@@ -93,6 +93,12 @@
     <Compile Include="Forms\NapDuLieuTuExcelForm.Designer.cs">
       <DependentUpon>NapDuLieuTuExcelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QuanLyThuChi\ThongKeThuChiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuanLyThuChi\ThongKeThuChiForm.Designer.cs">
+      <DependentUpon>ThongKeThuChiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NapDuLieuTuExcelForm.resx">
       <DependentUpon>NapDuLieuTuExcelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuanLyThuChi\ThongKeThuChiForm.resx">
+      <DependentUpon>ThongKeThuChiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
