@@ -1,5 +1,7 @@
 ﻿using GGTech.QuanLyCoSoGietMo._1.Common;
+using GGTech.QuanLyCoSoGietMo.Reports;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GGTech.QuanLyCoSoGietMo.Forms.QuanLyThuChi
@@ -24,14 +26,15 @@ namespace GGTech.QuanLyCoSoGietMo.Forms.QuanLyThuChi
             this.khachHangThuChiViewTableAdapter.FillByKhachHangNgayThuChi(this.gGTech.KhachHangThuChiView, dtnThuChiTuNgay.Value, dtnThuChiDenNgay.Value, AppCommon.AppIntergerParse(AppCommon.ComboBoxGetValueMember(cbbKhachHang).ToString()));
         }
 
-        private void btnXuatQuanLy_Click(object sender, EventArgs e)
+        private async void btnXuatQuanLy_Click(object sender, EventArgs e)
         {
-
+            new ThongKeChoQuanLyForm(dtnThuChiTuNgay.Value, dtnThuChiDenNgay.Value).ShowDialog();
+            //this.khachHangThuChiViewTableAdapter.FillByKhachHangNgayThuChi(this.gGTech.KhachHangThuChiView, dtnThuChiTuNgay.Value, dtnThuChiDenNgay.Value, AppCommon.AppIntergerParse(AppCommon.ComboBoxGetValueMember(cbbKhachHang).ToString()));
         }
 
         private void btnXuatKhachHang_Click(object sender, EventArgs e)
         {
-
+            //new Form1(AppCommon.AppIntergerParse(AppCommon.ComboBoxGetValueMember(cbbKhachHang).ToString()), AppCommon.ComboBoxGetDisplayMember(cbbKhachHang),dtnThuChiTuNgay.Value, dtnThuChiDenNgay.Value).ShowDialog();
         }
     }
 }
