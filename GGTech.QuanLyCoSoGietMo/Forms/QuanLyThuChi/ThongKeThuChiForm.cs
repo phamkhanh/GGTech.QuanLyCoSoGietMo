@@ -34,7 +34,13 @@ namespace GGTech.QuanLyCoSoGietMo.Forms.QuanLyThuChi
 
         private void btnXuatKhachHang_Click(object sender, EventArgs e)
         {
-            //new Form1(AppCommon.AppIntergerParse(AppCommon.ComboBoxGetValueMember(cbbKhachHang).ToString()), AppCommon.ComboBoxGetDisplayMember(cbbKhachHang),dtnThuChiTuNgay.Value, dtnThuChiDenNgay.Value).ShowDialog();
+            new ThongKeKhachHangThuChiForm(AppCommon.AppIntergerParse(AppCommon.ComboBoxGetValueMember(cbbKhachHang).ToString()), AppCommon.ComboBoxGetDisplayMember(cbbKhachHang),dtnThuChiTuNgay.Value, dtnThuChiDenNgay.Value).ShowDialog();
+        }
+
+        private void btnNapDuLieu_Click(object sender, EventArgs e)
+        {
+            new NapDuLieuTuExcelForm().ShowDialog();
+            this.khachHangThuChiViewTableAdapter.FillByNgayThuChi(this.gGTech.KhachHangThuChiView, dtnThuChiTuNgay.Value, dtnThuChiDenNgay.Value);
         }
     }
 }

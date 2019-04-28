@@ -7,67 +7,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>c607497c-0e71-44bf-a08d-35f63768f486</rd:DataSourceID>
+      <rd:DataSourceID>c55c7f6a-40c7-43a3-ac74-67f087f865be</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetThongKeChoQuanLy">
-      <Query>
-        <DataSourceName>GGTech</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Id">
-          <DataField>Id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="HoTen">
-          <DataField>HoTen</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NoiDung">
-          <DataField>NoiDung</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ThuChi">
-          <DataField>ThuChi</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SoTien">
-          <DataField>SoTien</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="GhiChu">
-          <DataField>GhiChu</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NgayChi">
-          <DataField>NgayChi</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="NgayTao">
-          <DataField>NgayTao</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="NgayCapNhat">
-          <DataField>NgayCapNhat</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="KhachHangId">
-          <DataField>KhachHangId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>GGTech</rd:DataSetName>
-        <rd:SchemaPath>E:\My Documents\Visual Studio 2017\Projects\NetCore\GGTech.QuanLyCoSoGietMo\GGTech.QuanLyCoSoGietMo\2.Dataset\GGTech.QuanLyCoSoGietMo.xsd</rd:SchemaPath>
-        <rd:TableName>KhachHangThuChiView</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>KhachHangThuChiViewTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DatasetChiTheoNgay">
+    <DataSet Name="DsTkKhachHangChiNgay">
       <Query>
         <DataSourceName>GGTech</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -123,35 +67,167 @@
         <rd:TableAdapterName>ThongKeChiTheoNgayTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="DsTkKhachHangThuNgay">
+      <Query>
+        <DataSourceName>GGTech</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="HoTen">
+          <DataField>HoTen</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NoiDung">
+          <DataField>NoiDung</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ThuChi">
+          <DataField>ThuChi</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SoTien">
+          <DataField>SoTien</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="GhiChu">
+          <DataField>GhiChu</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NgayChi">
+          <DataField>NgayChi</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="NgayTao">
+          <DataField>NgayTao</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="NgayCapNhat">
+          <DataField>NgayCapNhat</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="KhachHangId">
+          <DataField>KhachHangId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>GGTech</rd:DataSetName>
+        <rd:SchemaPath>E:\My Documents\Visual Studio 2017\Projects\NetCore\GGTech.QuanLyCoSoGietMo\GGTech.QuanLyCoSoGietMo\2.Dataset\GGTech.QuanLyCoSoGietMo.xsd</rd:SchemaPath>
+        <rd:TableName>ThongKeThuChiXeKhachHang</rd:TableName>
+        <rd:TableAdapterFillMethod>FillByKhachHang</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetDataByKhachHang</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>ThongKeThuChiXeKhachHangTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="Tablix1">
+          <Textbox Name="Textbox21">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=UCase(Parameters!HoTenKhachHang.Value)</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox21</rd:DefaultName>
+            <Top>0cm</Top>
+            <Left>0cm</Left>
+            <Height>0.7cm</Height>
+            <Width>9cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox22">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="BÁO CÁO THU - CHI" + System.Environment.NewLine +
+IIF(Parameters!TuNgay.Value.ToString().CompareTo(Parameters!DenNgay.Value.ToString()) = 0,
+"Ngày " + Parameters!TuNgay.Value,
+"Từ ngày: " + Parameters!TuNgay.Value + System.Environment.NewLine + "Đến ngày: " + Parameters!DenNgay.Value)</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>14pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox21</rd:DefaultName>
+            <Top>0cm</Top>
+            <Left>9cm</Left>
+            <Height>0.7cm</Height>
+            <Width>9cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix2">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>8.1534cm</Width>
+                  <Width>6cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.35951cm</Width>
+                  <Width>6cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.73229cm</Height>
+                  <Height>1cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox3">
+                        <Textbox Name="Textbox23">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Nội dung</Value>
+                                  <Value>NỘI DUNG</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -164,7 +240,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <rd:DefaultName>Textbox23</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -181,14 +257,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox5">
+                        <Textbox Name="Textbox25">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Số tiền</Value>
+                                  <Value>SỐ TIỀN</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>14pt</FontSize>
@@ -201,7 +277,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <rd:DefaultName>Textbox25</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -219,7 +295,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.78521cm</Height>
+                  <Height>0.7cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -230,11 +306,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!HoTen.Value + 
-IIf(Fields!NoiDung.Value.ToString() &lt;&gt; "",". " + Fields!NoiDung.Value,"") + 
-IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</Value>
+                                  <Value>=Fields!GhiChu.Value + 
+IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!NoiDung.Value,"")</Value>
                                   <Style>
-                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontFamily>tIMES NEW rOMAN</FontFamily>
                                     <FontSize>14pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -250,7 +325,6 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -270,7 +344,7 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                                 <TextRun>
                                   <Value>=FormatNumber(Fields!SoTien.Value,0)</Value>
                                   <Style>
-                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontFamily>tIMES NEW rOMAN</FontFamily>
                                     <FontSize>14pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -298,20 +372,20 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.73229cm</Height>
+                  <Height>1cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox14">
+                        <Textbox Name="Textbox29">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Tổng thu:</Value>
+                                  <Value>Tổng tiền ứng chở hàng: </Value>
                                   <Style>
-                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontFamily>tIMES NEW rOMAN</FontFamily>
                                     <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -322,15 +396,11 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <rd:DefaultName>Textbox29</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
                             </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -342,17 +412,17 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox15">
+                        <Textbox Name="Textbox30">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatNumber(sum(Fields!SoTien.Value),0)</Value>
+                                  <Value>=FormatNumber(Sum(Fields!SoTien.Value, "DsTkKhachHangChiNgay"),0)</Value>
                                   <Style>
-                                    <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>14pt</FontSize>
+                                    <FontFamily>tIMES NEW rOMAN</FontFamily>
+                                    <FontSize>15pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -362,15 +432,11 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <rd:DefaultName>Textbox30</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
                             </Border>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Width>1pt</Width>
-                            </BottomBorder>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -397,57 +463,129 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Details" />
-                  <TablixMembers>
-                    <TablixMember />
-                  </TablixMembers>
                 </TablixMember>
                 <TablixMember>
                   <KeepWithGroup>Before</KeepWithGroup>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetThongKeChoQuanLy</DataSetName>
-            <Top>1cm</Top>
-            <Left>2cm</Left>
-            <Height>2.24979cm</Height>
-            <Width>13.51291cm</Width>
+            <DataSetName>DsTkKhachHangChiNgay</DataSetName>
+            <Top>0.87639cm</Top>
+            <Left>3cm</Left>
+            <Height>2.7cm</Height>
+            <Width>12cm</Width>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
-                <Width>10pt</Width>
               </Border>
-              <FontFamily>Times New Roman</FontFamily>
-              <FontSize>14pt</FontSize>
             </Style>
           </Tablix>
-          <Tablix Name="Tablix5">
+          <Tablix Name="Tablix3">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>8.1534cm</Width>
+                  <Width>6cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.35951cm</Width>
+                  <Width>6cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.81167cm</Height>
+                  <Height>1cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="NoiDung1">
+                        <Textbox Name="Textbox33">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!HoTen.Value + 
-IIf(Fields!NoiDung.Value.ToString() &lt;&gt; "",". " + Fields!NoiDung.Value,"") + 
-IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</Value>
+                                  <Value>NỘI DUNG</Value>
                                   <Style>
-                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontFamily>times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox33</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox35">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>SỐ TIỀN</Value>
+                                  <Style>
+                                    <FontFamily>times New Roman</FontFamily>
+                                    <FontSize>14pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox35</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.7cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="HoTen">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!GhiChu.Value</Value>
+                                  <Style>
+                                    <FontFamily>times New Roman</FontFamily>
                                     <FontSize>14pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -457,7 +595,7 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>NoiDung1</rd:DefaultName>
+                          <rd:DefaultName>HoTen</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -483,7 +621,7 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                                 <TextRun>
                                   <Value>=FormatNumber(Fields!SoTien.Value,0)</Value>
                                   <Style>
-                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontFamily>times New Roman</FontFamily>
                                     <FontSize>14pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -511,20 +649,20 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.75875cm</Height>
+                  <Height>1cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox36">
+                        <Textbox Name="Textbox37">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Tổng chi: </Value>
+                                  <Value>Tổng số tiền xe: </Value>
                                   <Style>
-                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontFamily>tIMES NEW rOMAN</FontFamily>
                                     <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -535,7 +673,7 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox36</rd:DefaultName>
+                          <rd:DefaultName>Textbox37</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -551,16 +689,16 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox37">
+                        <Textbox Name="Textbox38">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatNumber(sum(Fields!SoTien.Value),0)</Value>
+                                  <Value>=FormatNumber(Sum(Fields!SoTien.Value, "DsTkKhachHangThuNgay"),0)</Value>
                                   <Style>
-                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontFamily>times New Roman</FontFamily>
                                     <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -571,7 +709,7 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox37</rd:DefaultName>
+                          <rd:DefaultName>Textbox38</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -598,6 +736,9 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
                   <Group Name="Details1" />
                 </TablixMember>
                 <TablixMember>
@@ -605,18 +746,30 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DatasetChiTheoNgay</DataSetName>
-            <Top>3.83328cm</Top>
-            <Left>2cm</Left>
-            <Height>1.57042cm</Height>
-            <Width>13.51291cm</Width>
-            <ZIndex>1</ZIndex>
+            <DataSetName>DsTkKhachHangThuNgay</DataSetName>
+            <Top>4.07028cm</Top>
+            <Left>3cm</Left>
+            <Height>2.7cm</Height>
+            <Width>12cm</Width>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
+          <Line Name="Line1">
+            <Top>9.61694cm</Top>
+            <Left>3cm</Left>
+            <Height>0cm</Height>
+            <Width>12cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
           <Textbox Name="Textbox39">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -624,12 +777,8 @@ IIf(Fields!GhiChu.Value.ToString() &lt;&gt; "",". " + Fields!GhiChu.Value,"")</V
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="BÁO CÁO THU - CHI" + System.Environment.NewLine +
-IIF(Parameters!TuNgay.Value.ToString().CompareTo(Parameters!DenNgay.Value.ToString()) = 0,
-"Ngày " + Parameters!TuNgay.Value,
-"Từ ngày: " + Parameters!TuNgay.Value + System.Environment.NewLine + "Đến ngày: " + Parameters!DenNgay.Value)</Value>
+                    <Value>="Tổng tiền ứng chở hàng: "+FormatNumber(Sum(Fields!SoTien.Value, "DsTkKhachHangChiNgay"),0)</Value>
                     <Style>
-                      <FontFamily>Times New Roman</FontFamily>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -641,11 +790,11 @@ IIF(Parameters!TuNgay.Value.ToString().CompareTo(Parameters!DenNgay.Value.ToStri
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox39</rd:DefaultName>
-            <Top>0cm</Top>
-            <Left>0.00001cm</Left>
-            <Height>0.75875cm</Height>
-            <Width>17.99999cm</Width>
-            <ZIndex>2</ZIndex>
+            <Top>7.26417cm</Top>
+            <Left>3cm</Left>
+            <Height>1cm</Height>
+            <Width>12cm</Width>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -664,9 +813,8 @@ IIF(Parameters!TuNgay.Value.ToString().CompareTo(Parameters!DenNgay.Value.ToStri
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Tổng thu: "+FormatNumber(Sum(Fields!SoTien.Value, "DataSetThongKeChoQuanLy"),0)</Value>
+                    <Value>="Tổng số tiền xe: "+FormatNumber(Sum(Fields!SoTien.Value, "DsTkKhachHangThuNgay"),0)</Value>
                     <Style>
-                      <FontFamily>Times New Roman</FontFamily>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -677,12 +825,12 @@ IIF(Parameters!TuNgay.Value.ToString().CompareTo(Parameters!DenNgay.Value.ToStri
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox39</rd:DefaultName>
-            <Top>5.90625cm</Top>
-            <Left>2cm</Left>
-            <Height>0.75875cm</Height>
-            <Width>13.51291cm</Width>
-            <ZIndex>3</ZIndex>
+            <rd:DefaultName>Textbox40</rd:DefaultName>
+            <Top>8.44056cm</Top>
+            <Left>3cm</Left>
+            <Height>1cm</Height>
+            <Width>12cm</Width>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -701,9 +849,8 @@ IIF(Parameters!TuNgay.Value.ToString().CompareTo(Parameters!DenNgay.Value.ToStri
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Tổng chi: "+FormatNumber(Sum(Fields!SoTien.Value, "DatasetChiTheoNgay"), 0)</Value>
+                    <Value>="Còn lại: " + FormatNumber(Sum(Fields!SoTien.Value, "DsTkKhachHangChiNgay") - Sum(Fields!SoTien.Value, "DsTkKhachHangThuNgay"), 0)</Value>
                     <Style>
-                      <FontFamily>Times New Roman</FontFamily>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -714,12 +861,12 @@ IIF(Parameters!TuNgay.Value.ToString().CompareTo(Parameters!DenNgay.Value.ToStri
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox39</rd:DefaultName>
-            <Top>6.7475cm</Top>
-            <Left>2cm</Left>
-            <Height>0.75875cm</Height>
-            <Width>13.51291cm</Width>
-            <ZIndex>4</ZIndex>
+            <rd:DefaultName>Textbox40</rd:DefaultName>
+            <Top>9.79333cm</Top>
+            <Left>3cm</Left>
+            <Height>1cm</Height>
+            <Width>12cm</Width>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -731,66 +878,9 @@ IIF(Parameters!TuNgay.Value.ToString().CompareTo(Parameters!DenNgay.Value.ToStri
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox42">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>="Còn lại: " + 
-FormatNumber(sum(Fields!SoTien.Value, "DataSetThongKeChoQuanLy")
--
-(Sum(Fields!SoTien.Value, "DatasetChiTheoNgay")), 0)</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>16pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Right</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox39</rd:DefaultName>
-            <Top>7.7475cm</Top>
-            <Left>2cm</Left>
-            <Height>0.75875cm</Height>
-            <Width>13.51291cm</Width>
-            <ZIndex>5</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Line Name="Line1">
-            <Top>7.64328cm</Top>
-            <Left>2cm</Left>
-            <Height>0cm</Height>
-            <Width>13.51291cm</Width>
-            <ZIndex>6</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-                <Width>2pt</Width>
-              </Border>
-            </Style>
-          </Line>
         </ReportItems>
-        <Height>8.50625cm</Height>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
+        <Height>10.79333cm</Height>
+        <Style />
       </Body>
       <Width>18cm</Width>
       <Page>
@@ -806,6 +896,10 @@ FormatNumber(sum(Fields!SoTien.Value, "DataSetThongKeChoQuanLy")
     </ReportSection>
   </ReportSections>
   <ReportParameters>
+    <ReportParameter Name="HoTenKhachHang">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
     <ReportParameter Name="TuNgay">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
@@ -823,10 +917,15 @@ FormatNumber(sum(Fields!SoTien.Value, "DataSetThongKeChoQuanLy")
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>TuNgay</ParameterName>
+          <ParameterName>HoTenKhachHang</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>TuNgay</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>DenNgay</ParameterName>
         </CellDefinition>
@@ -834,5 +933,5 @@ FormatNumber(sum(Fields!SoTien.Value, "DataSetThongKeChoQuanLy")
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>7037ec61-75e6-49f8-8f17-b1e41762d8ea</rd:ReportID>
+  <rd:ReportID>4a21c0ff-ceef-4e34-9d19-ebb94994b0f9</rd:ReportID>
 </Report>

@@ -31,6 +31,7 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelButtonFunction = new System.Windows.Forms.Panel();
+            this.lbMsgExcelToCSDL = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpNgayNhapDuLieu = new System.Windows.Forms.DateTimePicker();
             this.btnTimFile = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.btnNapDuLieuTheoNgay = new System.Windows.Forms.Button();
             this.btnMoExcelTheoNgay = new System.Windows.Forms.Button();
             this.btnMoFileExcelMau = new System.Windows.Forms.Button();
-            this.lbMsgExcelToCSDL = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.panelTitle.SuspendLayout();
             this.panelButtonFunction.SuspendLayout();
@@ -86,6 +86,16 @@
             this.panelButtonFunction.Name = "panelButtonFunction";
             this.panelButtonFunction.Size = new System.Drawing.Size(1005, 215);
             this.panelButtonFunction.TabIndex = 6;
+            // 
+            // lbMsgExcelToCSDL
+            // 
+            this.lbMsgExcelToCSDL.AutoSize = true;
+            this.lbMsgExcelToCSDL.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMsgExcelToCSDL.Location = new System.Drawing.Point(385, 134);
+            this.lbMsgExcelToCSDL.Name = "lbMsgExcelToCSDL";
+            this.lbMsgExcelToCSDL.Size = new System.Drawing.Size(0, 25);
+            this.lbMsgExcelToCSDL.TabIndex = 10;
+            this.lbMsgExcelToCSDL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -182,16 +192,6 @@
             this.btnMoFileExcelMau.UseVisualStyleBackColor = false;
             this.btnMoFileExcelMau.Click += new System.EventHandler(this.btnMoFileExcelMau_Click);
             // 
-            // lbMsgExcelToCSDL
-            // 
-            this.lbMsgExcelToCSDL.AutoSize = true;
-            this.lbMsgExcelToCSDL.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMsgExcelToCSDL.Location = new System.Drawing.Point(385, 134);
-            this.lbMsgExcelToCSDL.Name = "lbMsgExcelToCSDL";
-            this.lbMsgExcelToCSDL.Size = new System.Drawing.Size(0, 25);
-            this.lbMsgExcelToCSDL.TabIndex = 10;
-            this.lbMsgExcelToCSDL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // dgvData
             // 
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -210,6 +210,7 @@
             this.Controls.Add(this.panelButtonFunction);
             this.Controls.Add(this.panelTitle);
             this.Name = "NapDuLieuTuExcelForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nạp dữ liệu từ Excel";
             this.panelTitle.ResumeLayout(false);
             this.panelButtonFunction.ResumeLayout(false);

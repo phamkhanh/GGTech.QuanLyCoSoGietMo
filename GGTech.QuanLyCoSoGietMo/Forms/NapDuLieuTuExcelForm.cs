@@ -118,13 +118,18 @@ namespace GGTech.QuanLyCoSoGietMo.Forms
                         {
                             countRow++;
                             int _KhachHangId = AppCommon.AppIntergerParse(row.Cell("A").Value.ToString()); // KhachHangId
+                            string _HoTenKhachHang = row.Cell("B").Value.ToString(); // HoTenKhachHang
                             string _NoiDung = row.Cell("C").Value.ToString(); // NoiDung
-                            string _ThuChi = row.Cell("D").Value.ToString(); // ThuChi
+                            string _ThuChi = row.Cell("E").Value.ToString(); // ThuChi
                             decimal _SoTien = AppCommon.AppDecimalParse(row.Cell("G").Value.ToString()); // SoTien
                             string _GhiChu = row.Cell("F").Value.ToString(); // GhiChu
 
+                            if(_HoTenKhachHang.CompareTo(_NoiDung) == 0)
+                            {
+                                _NoiDung = "";
+                            }
+
                             if (_KhachHangId <= 0 ||
-                                string.IsNullOrEmpty(_NoiDung) ||
                                 _SoTien == 0 ||
                                 _ThuChi.CompareTo("+") != 0 &&
                                 _ThuChi.CompareTo("-") != 0)
@@ -134,15 +139,16 @@ namespace GGTech.QuanLyCoSoGietMo.Forms
                                 workbook.Save();
                                 GGTechMsg.Instance.Red(lbMsgExcelToCSDL, String.Format("Lỗi nạp dữ liệu đến CSDL. Dòng thứ {0} Sheet [ThuChi]", countRow));
                                 countError++; // lỗi tăng lên 1 đơn vị
-                                AppCommon.FileOpen(ExcelTemplatePath);
+                                AppCommon.FileOpen(ExcelPath);
                                 break;
                             }
+                            System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_NoiDung.ToLower());
                             dr = tableThuChi.NewRow();
                             dr["KhachHangId"] = _KhachHangId;
-                            dr["NoiDung"] = _NoiDung;
+                            dr["NoiDung"] = AppCommon.StringUpperTitle(_NoiDung);
                             dr["ThuChi"] = _ThuChi;
-                            dr["SoTien"] = _SoTien;
-                            dr["GhiChu"] = _GhiChu;
+                            dr["SoTien"] = _SoTien < 0 ?  _SoTien * -1 : _SoTien;
+                            dr["GhiChu"] = AppCommon.StringUpperTitle(_GhiChu);
                             dr["NgayChi"] = NgayNhapDuLieu;
                             dr["NgayTao"] = DateTime.Now;
                             dr["NgayCapNhat"] = DateTime.Now;
@@ -157,7 +163,7 @@ namespace GGTech.QuanLyCoSoGietMo.Forms
                     }
 
                     if (countError > 0) return; // nếu có lỗi thì không chạy dòng code bên dưới
-                    thuChiTableAdapter.sp_ThuChi_DeleteBy_NgayChi(DateTime.Parse(NgayNhapDuLieu.ToShortDateString()), DateTime.Parse(NgayNhapDuLieu.ToShortDateString() + " 11:59:59 PM"));
+                    thuChiTableAdapter.ThuChiDeleteByNgayChi(DateTime.Parse(NgayNhapDuLieu.ToShortDateString()), DateTime.Parse(NgayNhapDuLieu.ToShortDateString() + " 11:59:59 PM"));
                     thuChiTableAdapter.Update(tableThuChi);
                     GGTechMsg.Instance.Green(lbMsgExcelToCSDL, "Cập nhật dữ liệu thành công");
                 }
@@ -174,6 +180,22 @@ namespace GGTech.QuanLyCoSoGietMo.Forms
             using (var workbook = new XLWorkbook(ExcelTemplatePath))
             {
                 var workSheetKhachHang = workbook.Worksheet("KhachHang");
+
+                int indexRowStart = 2;
+
+                foreach (DataRow row in khachHangTable.Rows)
+                {
+                    workSheetKhachHang.Cell(String.Format("A{0}", indexRowStart)).Value = row["HoTen"];
+                    workSheetKhachHang.Cell(String.Format("B{0}", indexRowStart)).Value = row["Id"];
+
+                    indexRowStart++;
+                }
+                workbook.Save();
+            }
+
+            using (var workbook = new XLWorkbook(ExcelPath))
+            {
+                var workSheetKhachHang = workbook.Worksheet("KhachHang");
                 int indexRowStart = 2;
 
                 foreach (DataRow row in khachHangTable.Rows)
@@ -183,7 +205,7 @@ namespace GGTech.QuanLyCoSoGietMo.Forms
                     indexRowStart++;
                 }
                 workbook.Save();
-                AppCommon.FileOpen(ExcelTemplatePath);
+                AppCommon.FileOpen(ExcelPath);
             }
         }
     }

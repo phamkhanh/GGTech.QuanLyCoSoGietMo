@@ -26,6 +26,11 @@ namespace GGTech.QuanLyCoSoGietMo._1.Common
             set { _AppSettingFileXml = value; }
         }
 
+        public static string StringUpperTitle(string input)
+        {
+            return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower());
+        }
+
         public static void _FSaveSettingApp(string serverName, string database, string pagesize, string root = "<settings></settings>")
         {
             XmlDocument doc = new XmlDocument();
